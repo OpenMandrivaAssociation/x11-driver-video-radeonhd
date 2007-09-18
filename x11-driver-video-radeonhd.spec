@@ -2,7 +2,7 @@
 %define chipset radeonhd
 %define snapshot 20070918
 %define version 1.1.1
-%define release %mkrel 0.%{snapshot}.1
+%define release %mkrel 0.%{snapshot}.2
 %define distname xf86-video-%{chipset}-%{version}-%{snapshot}
 
 Name: %{name}
@@ -17,7 +17,6 @@ URL: http://xorg.freedesktop.org
 Source: %{distname}.tar.bz2
 License: MIT
 BuildRoot: %{_tmppath}/%{name}-root
-ExclusiveArch: %{ix86}
 BuildRequires: x11-proto-devel
 BuildRequires: x11-server-devel
 BuildRequires: autoconf

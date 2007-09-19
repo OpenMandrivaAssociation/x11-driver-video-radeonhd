@@ -1,28 +1,34 @@
-%define name x11-driver-video-%{chipset}
-%define chipset radeonhd
-%define snapshot 20070918
-%define version 1.1.1
-%define release %mkrel 0.%{snapshot}.2
-%define distname xf86-video-%{chipset}-%{version}-%{snapshot}
+%define name		x11-driver-video-%{chipset}
+%define chipset		radeonhd
+%define snapshot	20070919
+%define version		1.1.1
+%if %snapshot
+%define release		%mkrel 0.%{snapshot}.1
+%define distname	xf86-video-%{chipset}-%{snapshot}
+%else
+%define release		%mkrel 1
+%define distname	xf86-video-%{chipset}-%{version}
+%endif
 
-Name: %{name}
-Version: %{version}
-Release: %{release}
-Summary: The X.org driver for AMD GPG r5xx/r6xx Chipsets
-Group: System/X11
-URL: http://xorg.freedesktop.org
+Name:		%{name}
+Version:	%{version}
+Release:	%{release}
+Summary:	The X.org driver for AMD / ATI r5xx/r6xx chipsets
+Group:		System/X11
+URL:		http://xorg.freedesktop.org
 # git://anongit.freedesktop.org/git/xorg/driver/xf86-video-radeonhd
-# git archive --format=tar --prefix=xf86-video-radeonhd-1.1.1-$(date +%Y%m%d)/ master |
-#   bzip2 > ../xf86-video-radeonhd-1.1.1-$(date +%Y%m%d).tar.bz2
-Source: %{distname}.tar.bz2
-License: MIT
-BuildRoot: %{_tmppath}/%{name}-root
-BuildRequires: x11-proto-devel
-BuildRequires: x11-server-devel
-BuildRequires: autoconf
+# git archive --format=tar --prefix=xf86-video-radeonhd-$(date +%Y%m%d)/ master |
+#   lzma > ../xf86-video-radeonhd-$(date +%Y%m%d).tar.lzma
+Source:		%{distname}.tar.lzma
+License:	MIT
+BuildRoot:	%{_tmppath}/%{name}-root
+BuildRequires:	x11-proto-devel
+BuildRequires:	x11-server-devel
+BuildRequires:	autoconf
 
 %description
-The X.org driver for AMD GPG r5xx/r6xx Chipsets
+The X.org driver for AMD / ATI r5xx/r6xx chipsets (Radeon X1xxx and
+HD 2xxx cards).
  
 %prep
 %setup -q -n %{distname}

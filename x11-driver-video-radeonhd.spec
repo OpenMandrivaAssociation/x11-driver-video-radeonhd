@@ -25,6 +25,7 @@ License:	MIT
 BuildRoot:	%{_tmppath}/%{name}-root
 BuildRequires:	x11-proto-devel
 BuildRequires:	x11-server-devel
+BuildRequires:	x11-util-macros
 BuildRequires:	autoconf
 
 %description

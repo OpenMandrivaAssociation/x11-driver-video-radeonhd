@@ -51,3 +51,4 @@ rm -rf %{buildroot}
 %defattr(-,root,root)
 %{_libdir}/xorg/modules/drivers/radeonhd_drv.so
 %{_libdir}/xorg/modules/drivers/radeonhd_drv.la
+%{_mandir}/*/*

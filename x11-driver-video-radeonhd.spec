@@ -1,7 +1,7 @@
 %define name		x11-driver-video-%{chipset}
 %define chipset		radeonhd
-%define snapshot	20071023
-%define version		1.1.1
+%define snapshot	20071029
+%define version		0.0.2
 %if %snapshot
 %define release		%mkrel 0.%{snapshot}.1
 %define distname	xf86-video-%{chipset}-%{snapshot}
@@ -13,6 +13,7 @@
 Name:		%{name}
 Version:	%{version}
 Release:	%{release}
+Epoch:		1
 Summary:	The X.org driver for AMD / ATI r5xx/r6xx chipsets
 Group:		System/X11
 URL:		http://xorg.freedesktop.org

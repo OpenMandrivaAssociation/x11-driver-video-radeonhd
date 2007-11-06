@@ -3,7 +3,7 @@
 %define snapshot	20071029
 %define version		0.0.2
 %if %snapshot
-%define release		%mkrel 0.%{snapshot}.1
+%define release		%mkrel 0.%{snapshot}.2
 %define distname	xf86-video-%{chipset}-%{snapshot}
 %else
 %define release		%mkrel 1

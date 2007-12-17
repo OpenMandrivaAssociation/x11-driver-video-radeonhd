@@ -24,7 +24,6 @@ URL:		http://xorg.freedesktop.org
 #   lzma > ../xf86-video-radeonhd-$(date +%Y%m%d).tar.lzma
 Source:		%{distname}.tar.%{compress}
 License:	MIT
-BuildRoot:	%{_tmppath}/%{name}-root
 BuildRequires:	x11-proto-devel
 BuildRequires:	x11-server-devel
 BuildRequires:	x11-util-macros

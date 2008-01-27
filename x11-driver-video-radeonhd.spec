@@ -30,6 +30,9 @@ BuildRequires:	x11-proto-devel
 BuildRequires:	x11-server-devel
 BuildRequires:	x11-util-macros
 BuildRequires:	autoconf
+# For rhd_conntest
+BuildRequires:	pciutils-devel
+BuildRequires:	zlib-devel
 
 %description
 The X.org driver for AMD / ATI r5xx/r6xx chipsets (Radeon X1xxx and

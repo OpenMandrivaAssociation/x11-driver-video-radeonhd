@@ -1,7 +1,7 @@
 %define name		x11-driver-video-%{chipset}
 %define chipset		radeonhd
-%define snapshot	0
-%define version		1.1.0
+%define snapshot	20080127
+%define version		1.1.1
 %if %snapshot
 %define release		%mkrel 0.%{snapshot}.1
 %define distname	xf86-video-%{chipset}-%{snapshot}
@@ -37,6 +37,9 @@ HD 2xxx cards).
  
 %prep
 %setup -q -n %{distname}
+# hint from pcpa: don't include xf86_ansic.h to fix build errors
+#sed -i -e 's,#include "xf86_ansic.h",,g' src/*.c
+#sed -i -e 's,# include "xf86_ansic.h",,g' src/*.c
 
 %build
 autoreconf -v --install
@@ -46,6 +49,8 @@ autoreconf -v --install
 %install
 rm -rf %{buildroot}
 %makeinstall_std
+mkdir -p %{buildroot}%{_bindir}
+install -m 755 utils/conntest/rhd_conntest %{buildroot}%{_bindir}/
 
 %clean
 rm -rf %{buildroot}
@@ -54,4 +59,5 @@ rm -rf %{buildroot}
 %defattr(-,root,root)
 %{_libdir}/xorg/modules/drivers/radeonhd_drv.so
 %{_libdir}/xorg/modules/drivers/radeonhd_drv.la
+%{_bindir}/rhd_conntest
 %{_mandir}/*/*

@@ -1,13 +1,14 @@
 %define name		x11-driver-video-%{chipset}
 %define chipset		radeonhd
-%define snapshot	20080314
+%define snapshot	20080320
 %define version		1.1.1
+%define rel		1
 %if %snapshot
-%define release		%mkrel 0.%{snapshot}.1
+%define release		%mkrel 0.%{snapshot}.%{rel}
 %define distname	xf86-video-%{chipset}-%{snapshot}
 %define compress	lzma
 %else
-%define release		%mkrel 1
+%define release		%mkrel %{rel}
 %define distname	xf86-video-%{chipset}-%{version}
 %define compress	bz2
 %endif

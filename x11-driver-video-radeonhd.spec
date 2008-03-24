@@ -2,7 +2,7 @@
 %define chipset		radeonhd
 %define snapshot	20080320
 %define version		1.1.1
-%define rel		1
+%define rel		2
 %if %snapshot
 %define release		%mkrel 0.%{snapshot}.%{rel}
 %define distname	xf86-video-%{chipset}-%{snapshot}
@@ -24,7 +24,11 @@ URL:		http://xorg.freedesktop.org
 # git://anongit.freedesktop.org/git/xorg/driver/xf86-video-radeonhd
 # git archive --format=tar --prefix=xf86-video-radeonhd-$(date +%Y%m%d)/ master |
 #   lzma > ../xf86-video-radeonhd-$(date +%Y%m%d).tar.lzma
-Source:		%{distname}.tar.%{compress}
+Source0:	%{distname}.tar.%{compress}
+# Default to ShadowFB acceleration, not XAA (it's faster, at the cost
+# of more system resources). Re-examine when upstream improves XAA or
+# EXA acceleration. - AdamW 2008/03
+Patch0:		xf86-video-radeonhd-20080320-shadow.patch
 License:	MIT
 BuildRoot:	%{_tmppath}/%{name}-root
 BuildRequires:	x11-proto-devel
@@ -41,9 +45,7 @@ HD 2xxx cards).
  
 %prep
 %setup -q -n %{distname}
-# hint from pcpa: don't include xf86_ansic.h to fix build errors
-#sed -i -e 's,#include "xf86_ansic.h",,g' src/*.c
-#sed -i -e 's,# include "xf86_ansic.h",,g' src/*.c
+%patch0 -p1 -b .shadow
 
 %build
 autoreconf -v --install

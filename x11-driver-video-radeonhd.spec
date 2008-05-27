@@ -34,6 +34,7 @@ BuildRoot:	%{_tmppath}/%{name}-root
 BuildRequires:	x11-proto-devel
 BuildRequires:	x11-server-devel
 BuildRequires:	x11-util-macros
+BuildRequires:	mesagl-devel
 BuildRequires:	autoconf
 # For rhd_conntest
 BuildRequires:	pciutils-devel

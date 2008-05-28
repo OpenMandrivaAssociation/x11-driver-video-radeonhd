@@ -17,7 +17,7 @@ Name:		%{name}
 Version:	%{version}
 Release:	%{release}
 Epoch:		1
-Summary:	The X.org driver for AMD / ATI r5xx/r6xx chipsets
+Summary:	X.org driver for AMD / ATI r5xx/r6xx chipsets
 Group:		System/X11
 URL:		http://xorg.freedesktop.org
 # for GIT:

@@ -41,7 +41,7 @@ BuildRequires:	pciutils-devel
 BuildRequires:	zlib-devel
 
 %description
-The X.org driver for AMD / ATI r5xx/r6xx chipsets (Radeon X1xxx and
+The X.org driver for AMD / ATI r5xx/r6xx chipsets (Radeon X1xxx and.
 HD 2xxx cards).
  
 %prep

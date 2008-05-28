@@ -29,6 +29,7 @@ Source0:	%{distname}.tar.%{compress}
 # of more system resources). Re-examine when upstream improves XAA or
 # EXA acceleration. - AdamW 2008/03
 Patch0:		xf86-video-radeonhd-20080320-shadow.patch
+Patch1:		xf86-video-radeonhd-20080527-xf86_ansic.patch
 License:	MIT
 BuildRoot:	%{_tmppath}/%{name}-root
 BuildRequires:	x11-proto-devel
@@ -47,6 +48,7 @@ x11-driver-video-radeonhd is the X.org driver for AMD / ATI r5xx/r6xx chipsets
 %prep
 %setup -q -n %{distname}
 %patch0 -p1 -b .shadow
+%patch1 -p1 -b .xf86_ansic
 
 %build
 autoreconf -v --install

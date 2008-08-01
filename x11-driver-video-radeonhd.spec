@@ -1,6 +1,6 @@
 %define name		x11-driver-video-%{chipset}
 %define chipset		radeonhd
-%define snapshot	20080721
+%define snapshot	20080801
 %define version		1.2.2
 %define rel		1
 %if %snapshot
@@ -22,8 +22,7 @@ Group:		System/X11
 URL:		http://xorg.freedesktop.org
 # for GIT:
 # git://anongit.freedesktop.org/git/xorg/driver/xf86-video-radeonhd
-# git archive --format=tar --prefix=xf86-video-radeonhd-$(date +%Y%m%d)/ master |
-#   lzma > ../xf86-video-radeonhd-$(date +%Y%m%d).tar.lzma
+# git archive --format=tar --prefix=xf86-video-radeonhd-$(date +%Y%m%d)/ master | lzma > ../xf86-video-radeonhd-$(date +%Y%m%d).tar.lzma
 Source0:	%{distname}.tar.%{compress}
 # Default to ShadowFB acceleration, not XAA (it's faster, at the cost
 # of more system resources). Re-examine when upstream improves XAA or

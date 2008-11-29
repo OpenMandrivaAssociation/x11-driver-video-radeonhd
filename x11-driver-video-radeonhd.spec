@@ -1,7 +1,7 @@
 %define name		x11-driver-video-%{chipset}
 %define chipset		radeonhd
-%define snapshot	0
-%define version		1.2.3
+%define snapshot	20081129
+%define version		1.2.4
 %define rel		1
 %if %snapshot
 %define release		%mkrel 0.%{snapshot}.%{rel}

@@ -1,7 +1,7 @@
 %define name		x11-driver-video-%{chipset}
 %define chipset		radeonhd
 %define snapshot	0
-%define version		1.2.5
+%define version		1.3.0
 %define rel		1
 %if %snapshot
 %define release		%mkrel 0.%{snapshot}.%{rel}
@@ -27,7 +27,6 @@ Source0:	%{distname}.tar.%{compress}
 # Default to ShadowFB acceleration, not XAA (it's faster, at the cost
 # of more system resources). Re-examine when upstream improves XAA or
 # EXA acceleration. - AdamW 2008/03
-Patch0:		xf86-video-radeonhd-20080320-shadow.patch
 License:	MIT
 BuildRoot:	%{_tmppath}/%{name}-root
 BuildRequires:	x11-proto-devel
@@ -45,7 +44,6 @@ x11-driver-video-radeonhd is the X.org driver for AMD / ATI r5xx/r6xx chipsets
  
 %prep
 %setup -q -n %{distname}
-%patch0 -p1 -b .shadow
 
 %build
 autoreconf -v --install

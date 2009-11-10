@@ -24,9 +24,6 @@ URL:		http://xorg.freedesktop.org
 # git://anongit.freedesktop.org/git/xorg/driver/xf86-video-radeonhd
 # git archive --format=tar --prefix=xf86-video-radeonhd-$(date +%Y%m%d)/ master | lzma > ../xf86-video-radeonhd-$(date +%Y%m%d).tar.lzma
 Source0:	%{distname}.tar.%{compress}
-# Default to ShadowFB acceleration, not XAA (it's faster, at the cost
-# of more system resources). Re-examine when upstream improves XAA or
-# EXA acceleration. - AdamW 2008/03
 License:	MIT
 BuildRoot:	%{_tmppath}/%{name}-root
 BuildRequires:	x11-proto-devel

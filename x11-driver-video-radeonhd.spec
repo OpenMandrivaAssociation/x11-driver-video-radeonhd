@@ -2,7 +2,7 @@
 %define chipset		radeonhd
 %define snapshot	0
 %define version		1.3.0
-%define rel		3
+%define rel		4
 %if %snapshot
 %define release		%mkrel 0.%{snapshot}.%{rel}
 %define distname	xf86-video-%{chipset}-%{snapshot}
@@ -34,6 +34,7 @@ BuildRequires:	autoconf
 # For rhd_conntest
 BuildRequires:	pciutils-devel
 BuildRequires:	zlib-devel
+Requires: x11-server-common %(xserver-sdk-abi-requires videodrv)
 
 %description
 x11-driver-video-radeonhd is the X.org driver for AMD / ATI r5xx/r6xx chipsets

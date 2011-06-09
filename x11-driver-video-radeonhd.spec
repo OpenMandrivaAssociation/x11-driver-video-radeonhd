@@ -2,7 +2,7 @@
 %define chipset		radeonhd
 %define snapshot	0
 %define version		1.3.0
-%define rel		5
+%define rel		6
 %if %snapshot
 %define release		%mkrel 0.%{snapshot}.%{rel}
 %define distname	xf86-video-%{chipset}-%{snapshot}

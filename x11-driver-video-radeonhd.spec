@@ -24,17 +24,24 @@ URL:		http://xorg.freedesktop.org
 # git://anongit.freedesktop.org/git/xorg/driver/xf86-video-radeonhd
 # git archive --format=tar --prefix=xf86-video-radeonhd-$(date +%Y%m%d)/ master | lzma > ../xf86-video-radeonhd-$(date +%Y%m%d).tar.lzma
 Source0:	%{distname}.tar.%{compress}
+Patch0:		xf86-video-radeonhd-1.3.0-no-955x.patch
 License:	MIT
-BuildRoot:	%{_tmppath}/%{name}-root
 BuildRequires:	x11-proto-devel
 BuildRequires:	x11-server-devel
 BuildRequires:	x11-util-macros
 BuildRequires:	mesagl-devel
 BuildRequires:	autoconf
 # For rhd_conntest
-BuildRequires:	pciutils-devel
+BuildRequires:	libpci-devel
 BuildRequires:	zlib-devel
 Requires: x11-server-common %(xserver-sdk-abi-requires videodrv)
+
+%track
+prog %name = {
+	url = http://xorg.freedesktop.org/releases/individual/driver
+	regex = xf86-video-radeonhd-(__VER__)\.tar\.bz2
+	version = %version
+}
 
 %description
 x11-driver-video-radeonhd is the X.org driver for AMD / ATI r5xx/r6xx chipsets
@@ -42,6 +49,7 @@ x11-driver-video-radeonhd is the X.org driver for AMD / ATI r5xx/r6xx chipsets
  
 %prep
 %setup -q -n %{distname}
+%patch0 -p1 -b .955x~
 
 %build
 autoreconf -v --install

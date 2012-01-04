@@ -58,6 +58,6 @@ autoreconf -v --install
 install -m755 utils/conntest/rhd_conntest -D %{buildroot}%{_bindir}/rhd_conntest
 
 %files
-%{_libdir}/xorg/modules/drivers/radeonhd_drv.so
+%{_libdir}/xorg/modules/drivers/radeonhd_drv.*
 %{_bindir}/rhd_conntest
 %{_mandir}/*/*

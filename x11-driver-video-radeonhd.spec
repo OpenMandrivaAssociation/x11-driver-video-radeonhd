@@ -36,12 +36,12 @@ BuildRequires:	libpci-devel
 BuildRequires:	zlib-devel
 Requires: x11-server-common %(xserver-sdk-abi-requires videodrv)
 
-%track
-prog %name = {
-	url = http://xorg.freedesktop.org/releases/individual/driver
-	regex = xf86-video-radeonhd-(__VER__)\.tar\.bz2
-	version = %version
-}
+#%track
+#prog %name = {
+#	url = http://xorg.freedesktop.org/releases/individual/driver
+#	regex = xf86-video-radeonhd-(__VER__)\.tar\.bz2
+#	version = %version
+#}
 
 %description
 x11-driver-video-radeonhd is the X.org driver for AMD / ATI r5xx/r6xx chipsets

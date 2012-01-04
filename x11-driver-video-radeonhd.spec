@@ -1,8 +1,5 @@
-%define name		x11-driver-video-%{chipset}
 %define chipset		radeonhd
 %define snapshot	0
-%define version		1.3.0
-%define rel		7
 %if %snapshot
 %define release		%mkrel 0.%{snapshot}.%{rel}
 %define distname	xf86-video-%{chipset}-%{snapshot}
@@ -13,9 +10,9 @@
 %define compress	bz2
 %endif
 
-Name:		%{name}
-Version:	%{version}
-Release:	%{release}
+Name:		x11-driver-video-%{chipset}
+Version:	1.3.0
+Release:	8
 Epoch:		1
 Summary:	X.org driver for AMD / ATI r5xx/r6xx chipsets
 Group:		System/X11
@@ -34,7 +31,7 @@ BuildRequires:	autoconf
 # For rhd_conntest
 BuildRequires:	libpci-devel
 BuildRequires:	zlib-devel
-Requires: x11-server-common %(xserver-sdk-abi-requires videodrv)
+Requires:	x11-server-common %(xserver-sdk-abi-requires videodrv)
 
 #%track
 #prog %name = {
@@ -57,16 +54,10 @@ autoreconf -v --install
 %make
 
 %install
-rm -rf %{buildroot}
 %makeinstall_std
-mkdir -p %{buildroot}%{_bindir}
-install -m 755 utils/conntest/rhd_conntest %{buildroot}%{_bindir}/
-
-%clean
-rm -rf %{buildroot}
+install -m755 utils/conntest/rhd_conntest -D %{buildroot}%{_bindir}/rhd_conntest
 
 %files
-%defattr(-,root,root)
 %{_libdir}/xorg/modules/drivers/radeonhd_drv.so
 %{_bindir}/rhd_conntest
 %{_mandir}/*/*

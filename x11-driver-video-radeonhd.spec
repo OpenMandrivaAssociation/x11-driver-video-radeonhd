@@ -68,6 +68,5 @@ rm -rf %{buildroot}
 %files
 %defattr(-,root,root)
 %{_libdir}/xorg/modules/drivers/radeonhd_drv.so
-%{_libdir}/xorg/modules/drivers/radeonhd_drv.la
 %{_bindir}/rhd_conntest
 %{_mandir}/*/*

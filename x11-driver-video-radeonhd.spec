@@ -12,7 +12,7 @@
 
 Name:		x11-driver-video-%{chipset}
 Version:	1.3.0
-Release:	8
+Release:	9
 Epoch:		1
 Summary:	X.org driver for AMD / ATI r5xx/r6xx chipsets
 Group:		System/X11
@@ -24,12 +24,12 @@ Source0:	%{distname}.tar.%{compress}
 Patch0:		xf86-video-radeonhd-1.3.0-no-955x.patch
 License:	MIT
 BuildRequires:	x11-proto-devel
-BuildRequires:	x11-server-devel
+BuildRequires:	x11-server-devel >= 1.12
 BuildRequires:	x11-util-macros
 BuildRequires:	mesagl-devel
 BuildRequires:	autoconf
 # For rhd_conntest
-BuildRequires:	libpci-devel
+BuildRequires:	pkgconfig(libpci)
 BuildRequires:	zlib-devel
 Requires:	x11-server-common %(xserver-sdk-abi-requires videodrv)
 

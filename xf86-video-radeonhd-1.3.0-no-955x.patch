@@ -1,0 +1,17 @@
+--- xf86-video-radeonhd-1.3.0/src/rhd_id.c.ark	2009-10-09 17:42:45.000000000 +0200
++++ xf86-video-radeonhd-1.3.0/src/rhd_id.c	2012-01-01 11:53:25.024357056 +0100
+@@ -311,8 +311,14 @@ const PCI_ID_LIST = {
+     RHD_DEVICE_MATCH(  0x9542, RHD_RV710 ), /*   */
+     RHD_DEVICE_MATCH(  0x954E, RHD_RV710 ), /*   */
+     RHD_DEVICE_MATCH(  0x954F, RHD_RV710 ), /* ATI RADEON HD 4350 */
++#if 0
++    // These devices (9553 PCIE card and 9552 as found in Acer
++    // Aspire Timeline) don't actually work with the radeonhd
++    // driver. They work fine with the radeon driver, so nothing
++    // is lost.
+     RHD_DEVICE_MATCH(  0x9552, RHD_M92 ),   /* Mobility Radeon HD 4300 Series */
+     RHD_DEVICE_MATCH(  0x9553, RHD_M92 ),   /* Mobility Radeon HD 4500 Series */
++#endif
+     RHD_DEVICE_MATCH(  0x9555, RHD_M93 ),   /* Mobility Radeon M93 */
+     RHD_DEVICE_MATCH(  0x9557, RHD_M93 ),   /* ATI FirePro RG220 */
+     RHD_DEVICE_MATCH(  0x9580, RHD_RV630 ), /* RV630 */

@@ -19,7 +19,7 @@ Release:	%{release}
 Epoch:		1
 Summary:	X.org driver for AMD / ATI r5xx/r6xx chipsets
 Group:		System/X11
-URL:		http://xorg.freedesktop.org
+URL:		https://xorg.freedesktop.org
 # for GIT:
 # git://anongit.freedesktop.org/git/xorg/driver/xf86-video-radeonhd
 # git archive --format=tar --prefix=xf86-video-radeonhd-$(date +%Y%m%d)/ master | lzma > ../xf86-video-radeonhd-$(date +%Y%m%d).tar.lzma

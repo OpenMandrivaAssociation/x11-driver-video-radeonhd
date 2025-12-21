@@ -25,6 +25,10 @@ URL:		https://xorg.freedesktop.org
 # git archive --format=tar --prefix=xf86-video-radeonhd-$(date +%Y%m%d)/ master | lzma > ../xf86-video-radeonhd-$(date +%Y%m%d).tar.lzma
 Source0:	%{distname}.tar.%{compress}
 License:	MIT
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	x11-proto-devel
 BuildRequires:	x11-server-devel
 BuildRequires:	x11-util-macros
